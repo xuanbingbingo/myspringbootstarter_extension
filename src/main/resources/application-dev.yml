@@ -15,9 +15,27 @@ spring:
     password: root
     # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
+  # redis环境配置
+  redis:
+    host: localhost
+    database: 0
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 20
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+    timeout: 10000
 
 #也可自定义配置
 mall:
   config:
     name: bingo
     age: 18
+
+# redis连接池配置
+#spring.redis.jedis.pool.max-active=200
+#spring.redis.jedis.pool.min-idle=20
+#spring.redis.jedis.pool.max-wait=3000ms
