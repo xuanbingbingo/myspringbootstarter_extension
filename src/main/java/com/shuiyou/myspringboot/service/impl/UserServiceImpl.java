@@ -33,4 +33,9 @@ public class UserServiceImpl implements UserService {
         return result;
     }
 
+    @Override
+    public void printTest() {
+        System.out.println("我擦咧，执行了！");
+    }
+
 }

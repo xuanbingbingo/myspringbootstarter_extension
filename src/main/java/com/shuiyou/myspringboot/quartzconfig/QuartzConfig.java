@@ -48,8 +48,8 @@ public class QuartzConfig {
     public CronTriggerFactoryBean cronTriggerFactoryBean(JobDetailFactoryBean jobDetailFactoryBean){
         CronTriggerFactoryBean triggerFactoryBean = new CronTriggerFactoryBean();
         triggerFactoryBean.setJobDetail(jobDetailFactoryBean.getObject());
-        // 设置触发时间
-        triggerFactoryBean.setCronExpression("0/2 * * * * ?");
+        // 设置触发时间。5秒执行一次
+        triggerFactoryBean.setCronExpression("0/5 * * * * ?");
         return triggerFactoryBean;
     }
 
@@ -67,10 +67,11 @@ public class QuartzConfig {
 
     // 使用Cron Trigger，上面是使用简单Trigger
     @Bean
-    public SchedulerFactoryBean schedulerFactoryBean(CronTriggerFactoryBean cronTriggerFactoryBean){
+    public SchedulerFactoryBean schedulerFactoryBean(CronTriggerFactoryBean cronTriggerFactoryBean, MyAdaptableJobFactory myAdaptableJobFactory){
         SchedulerFactoryBean schedulerFactoryBean = new SchedulerFactoryBean();
         /// 关联Trigger
         schedulerFactoryBean.setTriggers(cronTriggerFactoryBean.getObject());
+        schedulerFactoryBean.setJobFactory(myAdaptableJobFactory);
         return schedulerFactoryBean;
     }
 }

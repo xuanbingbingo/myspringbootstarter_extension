@@ -11,4 +11,6 @@ public interface UserService {
 
     boolean addUser(User record);
 
+    public void printTest();
+
 }
