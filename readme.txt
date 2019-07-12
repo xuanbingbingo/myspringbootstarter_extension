@@ -2,3 +2,5 @@
 2.增加了过滤器的demo
 3.增加了定时器的demo
 4.增加了redis缓存使用的demo
+5.增加了pageHelper使用的demo
+6.增加了swagger2使用的demo
