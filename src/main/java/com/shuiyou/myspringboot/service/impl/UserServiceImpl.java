@@ -1,5 +1,6 @@
 package com.shuiyou.myspringboot.service.impl;
 
+import com.github.pagehelper.PageHelper;
 import com.shuiyou.myspringboot.dao.UserDao;
 import com.shuiyou.myspringboot.entity.User;
 import com.shuiyou.myspringboot.service.UserService;
@@ -19,6 +20,13 @@ public class UserServiceImpl implements UserService {
 
     public User getUserById(int userId) {
         return userDao.selectByPrimaryKey(userId);
+    }
+
+    @Override
+    public List<User> selectAllUser(int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<User> userList = userDao.selectAllUser();
+        return userList;
     }
 
     public boolean addUser(User record){

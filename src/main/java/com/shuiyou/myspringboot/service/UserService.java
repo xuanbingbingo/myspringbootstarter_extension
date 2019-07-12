@@ -9,6 +9,8 @@ public interface UserService {
 
     public User getUserById(int userId);
 
+    public List<User> selectAllUser(int pageNum, int pageSize);
+
     boolean addUser(User record);
 
     public void printTest();
