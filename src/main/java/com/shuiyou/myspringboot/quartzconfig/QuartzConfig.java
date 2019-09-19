@@ -1,6 +1,7 @@
 package com.shuiyou.myspringboot.quartzconfig;
 
 import com.shuiyou.myspringboot.quartz.QuartzDemo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
@@ -9,10 +10,11 @@ import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.scheduling.quartz.SimpleTriggerFactoryBean;
 
 /**
- * Quartz配置类
+ * Quartz配置类（没用到）
  */
-@Configuration
+//@Configuration //简单流程，不适合实际业务逻辑的处理，暂时注释掉
 public class QuartzConfig {
+
     /**
      * 1。创建Job对象
      */

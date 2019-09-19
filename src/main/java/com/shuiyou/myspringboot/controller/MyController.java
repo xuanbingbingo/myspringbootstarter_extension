@@ -4,8 +4,11 @@ import com.shuiyou.myspringboot.common.CommonPage;
 import com.shuiyou.myspringboot.common.CommonResult;
 import com.shuiyou.myspringboot.dto.PageCommonDto;
 import com.shuiyou.myspringboot.entity.User;
+import com.shuiyou.myspringboot.quartz.TestQuartzDemo;
 import com.shuiyou.myspringboot.service.UserService;
 import io.swagger.annotations.ApiOperation;
+import org.quartz.SchedulerException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
@@ -24,6 +27,10 @@ public class MyController {
     private String name;
     @Value("${mall.config.age}")
     private String age;
+
+    @Autowired
+    TestQuartzDemo TestQuartzDemo;
+
 
     @RequestMapping(value = "/out",method = RequestMethod.GET)
     @ResponseBody

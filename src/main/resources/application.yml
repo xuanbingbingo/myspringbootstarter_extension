@@ -9,3 +9,7 @@ spring:
 mybatis:
   typeAliasesPackage: com.shuiyou.myspringboot.entity
   mapperLocations: classpath:mapper/*.xml
+
+context:
+  listener:
+    classes: com.shuiyou.myspringboot.startup.ApplicationStartup

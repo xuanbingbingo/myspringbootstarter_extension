@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
-@Service("userService")
+@Service
 public class UserServiceImpl implements UserService {
 
     @Resource
