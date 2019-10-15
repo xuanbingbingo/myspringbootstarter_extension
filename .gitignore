@@ -30,3 +30,6 @@ HELP.md
 
 ### 运行时包
 *.0.gz
+
+### log
+/logs

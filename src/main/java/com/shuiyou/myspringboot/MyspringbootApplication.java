@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @MapperScan("com.shuiyou.myspringboot.dao")
 @ServletComponentScan
-@EnableScheduling    //默认不开启Scheduled定时任务
+//@EnableScheduling    //默认不开启Scheduled定时任务
 
 public class MyspringbootApplication {
 

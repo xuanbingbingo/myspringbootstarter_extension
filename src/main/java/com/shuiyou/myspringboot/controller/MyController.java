@@ -7,6 +7,7 @@ import com.shuiyou.myspringboot.entity.User;
 import com.shuiyou.myspringboot.quartz.TestQuartzDemo;
 import com.shuiyou.myspringboot.service.UserService;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,6 +19,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+@Slf4j
 @Controller
 @EnableAutoConfiguration
 public class MyController {
@@ -29,12 +31,13 @@ public class MyController {
     private String age;
 
     @Autowired
-    TestQuartzDemo TestQuartzDemo;
-
+    TestQuartzDemo testQuartzDemo;
 
     @RequestMapping(value = "/out",method = RequestMethod.GET)
     @ResponseBody
-    public String out(){
+    public String out() throws SchedulerException {
+        log.error("这是一条error");
+        log.info("这是一条info");
         return "success" + name + age;
     }
 

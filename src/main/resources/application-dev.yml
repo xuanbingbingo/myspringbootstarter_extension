@@ -2,11 +2,19 @@ server:
   port: 7002
 #  servlet:
 #    context-path: /my
-debug: true
+#debug: true
+#logging:
+#  level:
+#    root: info
+#  file: myspringboot.log
 logging:
+  config: classpath:logback-spring.xml
+  path: ./logs
+  files:
+    stdout: myspringbootstarter_extension.log
+    stderr: myspringbootstarter_extension.err
   level:
-    root: info
-  file: myspringboot.log
+    root: INFO
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
