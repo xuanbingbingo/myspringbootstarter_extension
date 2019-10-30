@@ -4,3 +4,4 @@
 4.增加了redis缓存使用的demo
 5.增加了pageHelper使用的demo
 6.增加了swagger2使用的demo
+7.test
