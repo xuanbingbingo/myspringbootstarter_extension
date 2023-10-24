@@ -43,7 +43,17 @@ mall:
     name: bingo
     age: 18
 
+
 # redis连接池配置
 #spring.redis.jedis.pool.max-active=200
 #spring.redis.jedis.pool.min-idle=20
 #spring.redis.jedis.pool.max-wait=3000ms
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'

@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void printTest() {
-        System.out.println("我擦咧，执行了！");
+        System.out.println("我擦咧，执行了啊！");
     }
 
 }
